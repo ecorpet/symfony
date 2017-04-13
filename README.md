@@ -72,6 +72,9 @@ bm_backup_manager:
             user: postgres
             pass: password
             database: test
+            ignoreTables:
+                - table_to_ignore_a
+                - table_to_ignore_b
     storage:
         local:
             type: Local
