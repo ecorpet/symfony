@@ -126,7 +126,7 @@ Backup to / restore from any configured database.
 Backup the development database to `Amazon S3`. The S3 backup path will be `test/backup.sql.gz` in the end, when `gzip` is done with it.
 
 ```php
-$this->container->get('backup_manager')->makeBackup()->run('development', 's3', 'test/backup.sql', 'gzip');
+$this->container->get('backup_manager')->makeBackup()->run('development', [new Destination('s3', 'test/backup.sql')], 'gzip');
 ```
 
 Backup to / restore from any configured filesystem.
